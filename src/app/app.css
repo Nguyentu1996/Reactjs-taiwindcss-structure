@@ -1,0 +1,58 @@
+.h-wrapper{
+  min-height: calc(80% - 5.25rem - 4px);
+}
+
+
+@keyframes slideIn {
+  0%   {transform: translateX(-66%);}
+  100% {transform: translateX(0%);}
+}
+
+@keyframes slideOut {
+  0%   {position: absolute; top: 0; left: 0%;}
+  100% {position: absolute; top: 0; left: -25%}
+}
+
+
+.slide-in {
+  animation-name: slideIn;
+  /* transition-delay: 75ms; */
+  animation-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+.slide-out {
+  animation-name: slideOut;
+  animation-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+@media only screen and (max-width: 1280px) {
+  .slide-out {
+    animation-name: slideOut;
+    animation-duration: 400ms;
+    transition-timing-function: ease-out;
+  }
+  @keyframes slideOut {
+    0%   {position: absolute; top: 0; left: 0%;}
+    100% {position: absolute; top: 0; left: -40%}
+  }
+}
+@media only screen and (max-width: 640px) {
+  .h-wrapper{
+    min-height: calc(80% - 6.75rem);
+  }
+  .slide-out {
+    animation-name: slideOut;
+    animation-duration: 300ms;
+    transition-timing-function: ease-out;
+  }
+  @keyframes slideOut {
+    0%   {position: absolute; top: 0; left: 0%;}
+    100% {position: absolute; top: 0; left: -66%}
+  }
+  #menu {
+    position: absolute;
+    top: 5px;
+    left:0
+  }
+}
