@@ -1,0 +1,1 @@
+(self.webpackChunkclient=self.webpackChunkclient||[]).push([[430],{430:function(e,n,t){"use strict";t.r(n),t.d(n,{default:function(){return c}});var l=t(294);function c(){return l.createElement("div",{className:"container"},l.createElement("h1",null,"Detail page"),l.createElement("p",null,"Hello world"))}}}]);

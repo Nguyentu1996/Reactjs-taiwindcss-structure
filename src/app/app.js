@@ -1,13 +1,13 @@
-import MainLayout from '../components/layouts/main-layout';
-import './app.css';
-import Routes from './router';
+import React from 'react'
+import MainLayout from '../components/layouts/main-layout'
+import Routes from './app-router'
 
 function App() {
   return (
     <MainLayout>
       <Routes />
     </MainLayout>
-  );
+  )
 }
 
-export default App;
+export default App
