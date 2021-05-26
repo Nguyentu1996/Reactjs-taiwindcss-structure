@@ -1,5 +1,4 @@
 /* eslint-disable  */
-
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
@@ -14,11 +13,6 @@ module.exports = (env, argv) => {
     return {
         devtool: argv.mode === 'development' ? 'source-map' : false,
         entry: path.join(__dirname, 'src', 'index.js'),
-        resolve: {
-            alias: {
-                "@": path.resolve(__dirname, "src")
-            }
-        },
         module: {
             rules: [
                 {
@@ -87,7 +81,6 @@ module.exports = (env, argv) => {
             compress: true,
             port: 3000,
             historyApiFallback: true,
-
         },
 
         plugins: [
@@ -97,13 +90,13 @@ module.exports = (env, argv) => {
             }),
             new MiniCssExtractPlugin(
                 // { // plugin for controlling how compiled css will be outputted and named
-                //    filename: "assets/styles/[name].css",
+                //   filename: "assets/styles/[name].css",
                 //   chunkFilename: "styles/[contenthash].css"
                 // }
             ),
             // This makes it possible for us to safely use env vars on our code
             new webpack.DefinePlugin({
-                'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH),
+                'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH)
             }),
             //ignore Plugin locale
             new webpack.IgnorePlugin({
@@ -118,7 +111,7 @@ module.exports = (env, argv) => {
         ],
         output: {
             path: path.resolve(__dirname, 'dist'),
-            //chống browser save cache fullhash/chunkhash/contenthash
+            // browser not save cache fullhash/chunkhash/contenthash
             // Sync chunk hash 
             filename: '[name][fullhash].js',
             clean: true,

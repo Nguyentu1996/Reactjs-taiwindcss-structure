@@ -1,4 +1,6 @@
 // tailwind.config.js
+/* eslint-disable  */
+
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -6,7 +8,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     minWidth: {
-      'logo': '12',
+      'logo': '12'
     },
     keyframes: {
       slide: {
@@ -14,12 +16,12 @@ module.exports = {
           transform: 'translateX(-25%)'
         },
         '50%': {
-            transform: 'translateX(0)'          
-        },
+          transform: 'translateX(0)'
+        }
       }
     },
     animation: {
-      slide: 'wiggle 3s ease-in-out infinite',
+      slide: 'wiggle 3s ease-in-out infinite'
     },
     colors: {
       gray: colors.coolGray,
@@ -32,16 +34,15 @@ module.exports = {
       orange: colors.orange,
       blurred: 'rgba(0,0,0,.8)'
     },
-    extend: {
-      // backgroundColor: ['active'],
-      // // ...
-      // borderColor: ['focus-visible', 'first'],
-      // // ...
-      // textColor: ['visited'],
-    }
+    extend: {}
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  stats: {
+    children: true,
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+  ]
 }

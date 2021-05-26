@@ -9,7 +9,7 @@ function Header() {
   return (
     <div className="flex bg-default z-40">
       <div className="container mx-auto pt-1">
-        <div className="h-15 sm:h-10 flex flex-wrap content-center">
+        <div className="flex flex-wrap content-center">
           <div
             id="nav-left"
             className="text-gray-50 flex content-center self-center pl-2 h-5/6 w-4/12 xl:w-2/12 md:w-3/12 sm:w-3/12"

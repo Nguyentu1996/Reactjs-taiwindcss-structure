@@ -1,7 +1,13 @@
-.h-wrapper{
+.h-wrapper {
   min-height: calc(80% - 5.25rem - 4px);
+  /* height: calc(80% - 5.25rem - 4px); */
 }
+/* .banner-img {
+  background-image: url('../images/porsche-911.jpg');
+} */
+/* input[type=checkbox] {
 
+} */
 
 @keyframes slideIn {
   0%   {transform: translateX(-66%);}
