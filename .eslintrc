@@ -1,15 +1,16 @@
 {
      "plugins": [
-          "react"
+          "react",
+          "react-hooks"
      ],
      "parser": "babel-eslint",
      "extends": [
           "airbnb",
           "eslint:recommended",
-          "plugin:react/recommended"
+          "plugin:react/recommended",
+          "plugin:react-hooks/recommended"
      ],
      "rules": {
-          
           "camelcase": [
                2,
                {
@@ -38,26 +39,58 @@
           "no-tabs": 0,
           "global-require": 0,
           "object-curly-newline": 0,
-          "max-len": ["error", { "code": 150 }],
+          "max-len": [
+               "error",
+               {
+                    "code": 150
+               }
+          ],
           "quote-props": 0,
           "no-void": 0,
-          "comma-dangle": ["error", "never"],
-          "semi": ["error", "never"],
+          "comma-dangle": [
+               "error",
+               "never"
+          ],
+          "semi": [
+               "error",
+               "never"
+          ],
           "no-console": 1,
           "no-param-reassign": 0,
           "class-methods-use-this": 0,
-          "arrow-body-style": ["error", "as-needed"],
-          "dot-notation": ["error", { "allowPattern": "^[a-z]+(_[a-z]+)+$" }],
-          "no-unused-expressions": ["error", {
-            "allowTaggedTemplates": true
-          }],
-          "no-underscore-dangle": ["error", {
-            "allowAfterThis": true,
-            "allowAfterSuper": true
-          }],
-          "func-names": ["error", "never"],
+          "arrow-body-style": [
+               "error",
+               "as-needed"
+          ],
+          "dot-notation": [
+               "error",
+               {
+                    "allowPattern": "^[a-z]+(_[a-z]+)+$"
+               }
+          ],
+          "no-unused-expressions": [
+               "error",
+               {
+                    "allowTaggedTemplates": true
+               }
+          ],
+          "no-underscore-dangle": [
+               "error",
+               {
+                    "allowAfterThis": true,
+                    "allowAfterSuper": true
+               }
+          ],
+          "func-names": [
+               "error",
+               "never"
+          ],
           "import/prefer-default-export": 0,
-          "jsx-a11y/no-static-element-interactions": 0
+          "jsx-a11y/no-static-element-interactions": 0,
+          "react-hooks/rules-of-hooks": "error",
+          "react-hooks/exhaustive-deps": "warn",
+          "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false , "varsIgnorePattern": "[iI]gnored" }]
+
      },
      "parserOptions": {
           "ecmaVersion": 6,

@@ -1,12 +1,15 @@
 import React from 'react'
 import MainLayout from '../components/layouts/main-layout'
 import Routes from './app-router'
+import Store from '../store'
 
 function App() {
   return (
-    <MainLayout>
-      <Routes />
-    </MainLayout>
+    <Store>
+      <MainLayout>
+        <Routes />
+      </MainLayout>
+    </Store>
   )
 }
 
