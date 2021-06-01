@@ -1,1 +1,0 @@
-(self.webpackChunkclient=self.webpackChunkclient||[]).push([[539],{539:function(e,n,t){"use strict";t.r(n),t.d(n,{default:function(){return a}});var l=t(294),c=t.p+"assets/images/64b6abdbeb9a1690d34cd101de8cc440.png";function a(){return l.createElement("div",null,l.createElement("h1",null,"Home Page"),l.createElement("p",null,l.createElement("img",{alt:"logo name",src:c})))}}}]);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { actions } from '../../store/actions'
 import background from '../../resources/images/porsche-911.jpg'
 import DecorTitle from '../../components/core/decor-title'
@@ -8,9 +9,12 @@ import InputText from '../../components/core/input-text'
 import Checkbox from '../../components/core/checkbox'
 import Icons from '../../components/icons'
 import Button from '../../components/core/button'
+import Storage from '../../common/local-storegare'
+import Configs from '../../configs/env.config.json'
 
-// eslint-disable-next-line no-unused-vars
 function LoginPage(props) {
+  // eslint-disable-next-line no-unused-vars
+  const { t, i18n } = useTranslation()
   const [isRemember, setRemember] = useState(true)
   const [formLogin, setFormLogin] = useState(
     {
@@ -32,12 +36,11 @@ function LoginPage(props) {
   const login = (event) => {
     event.preventDefault()
     const payload = { ...formLogin }
-    props.login(payload, (success, result) => {
+    props.login(payload, (success, response) => {
       if (success) {
-        console.log(success, result)
+        Storage.set(Configs.STORAGE, response.result)
       }
     })
-    // console.log('success', props.stateLogin)
   }
 
   return (
@@ -69,7 +72,6 @@ function LoginPage(props) {
                   value={formLogin.userName}
                   type="text"
                   name="userName"
-                  className="rounded-md"
                   labelName="Username or email address"
                 />
               </div>
@@ -78,7 +80,6 @@ function LoginPage(props) {
                   hanbleChanges={hanbleChanges}
                   name="password"
                   type="password"
-                  className="rounded-md"
                   labelName="Password"
                   value={formLogin.password}
                 />
@@ -119,5 +120,4 @@ const mapStateToProps = (state) => ({
 const mapStateToDispatch = (dispatch) => ({
   login: (payload, callback) => dispatch(actions.login(payload, callback))
 })
-
 export default connect(mapStateToProps, mapStateToDispatch)(LoginPage)
