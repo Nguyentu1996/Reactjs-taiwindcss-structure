@@ -165421,6 +165421,28 @@ select {
 
 } */
 
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+  from {
+    top:-300px; opacity:0
+  }
+
+  to {
+    top:0; opacity:1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top:-300px; opacity:0
+  }
+
+  to {
+    top:0; opacity:1
+  }
+}
+
 @-webkit-keyframes slideIn {
   0%   {
     -webkit-transform: translateX(-66%);

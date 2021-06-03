@@ -6,6 +6,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 const DetailPage = lazy(() => import('../pages/detail/detail'))
 const HomePage = lazy(() => import('../pages/home/home'))
 const LoginPage = lazy(() => import('../pages/login/login'))
+const NotFoundPage = lazy(() => import('../pages/not-found/not-found'))
 
 function Routes() {
   return (
@@ -16,7 +17,8 @@ function Routes() {
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/detail" component={DetailPage} />
-        <Redirect exact path="*" to="/" />
+        <Route exact path="/404" component={NotFoundPage} />
+        <Redirect exact path="*" to="/404" />
         {/* </Switch> */}
         {/* </MainLayout> */}
       </Switch>

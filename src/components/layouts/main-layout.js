@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import Footer from './footer'
 import Header from './header'
 import Menu from './menu'
@@ -32,5 +33,8 @@ const MainLayout = (props) => {
     </div>
   )
 }
+const mapStateToProps = (state) => ({
+  toasts: state.toasts
+})
 
-export default MainLayout
+export default connect(mapStateToProps)(MainLayout)

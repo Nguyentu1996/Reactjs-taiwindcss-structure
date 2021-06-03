@@ -7,14 +7,17 @@ import background from '../../resources/images/porsche-911.jpg'
 import DecorTitle from '../../components/core/decor-title'
 import InputText from '../../components/core/input-text'
 import Checkbox from '../../components/core/checkbox'
-import Icons from '../../components/icons'
+import Icons from '../../components/core/icons'
 import Button from '../../components/core/button'
 import Storage from '../../common/local-storegare'
 import Configs from '../../configs/env.config.json'
+import { useToast } from '../../components/core/toast'
 
 function LoginPage(props) {
   // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation()
+  const toast = useToast()
+
   const [isRemember, setRemember] = useState(true)
   const [formLogin, setFormLogin] = useState(
     {
@@ -39,6 +42,7 @@ function LoginPage(props) {
     props.login(payload, (success, response) => {
       if (success) {
         Storage.set(Configs.STORAGE, response.result)
+        toast.add(response.message)
       }
     })
   }

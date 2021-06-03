@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Icons from '../icons'
+import Icons from '../core/icons'
 
 export default function Menu(props) {
   const activeStyle = { color: '#FCD34D', borderBottom: '1px solid rgb(252, 211, 77)' }

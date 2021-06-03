@@ -1,6 +1,7 @@
 const types = [
   // API
-  'LOGIN'
+  'LOGIN',
+  'TOAST'
 ]
 
 export default types

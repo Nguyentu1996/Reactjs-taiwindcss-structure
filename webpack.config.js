@@ -115,7 +115,7 @@ module.exports = (env, argv) => {
       filename: '[name][fullhash].js',
       clean: true,
       // Async Chunk 
-      // chunkFilename: '[hash].js',
+      chunkFilename: '[name][fullhash].js',
       publicPath: ASSET_PATH,
     },
 

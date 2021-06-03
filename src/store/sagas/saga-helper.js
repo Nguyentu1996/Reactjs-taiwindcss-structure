@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { call, put } from 'redux-saga/effects'
-import Notification from '../../components/modals/notification'
 
 export default function sagaHelper({ api, success, message }) {
   return function* ({ type, data, callback }) {
@@ -11,9 +10,10 @@ export default function sagaHelper({ api, success, message }) {
       yield put({ type: requestType, payload: data })
       let result = yield call(api, data)
       yield put({ type: successType, data: result, payload: data })
-      if (success) {
-        Notification.success(success)
-      }
+
+      // if (result.success) {
+      // //   yield put({ type: 'TOAST_REQUEST', data: success, payload: data })
+      // }
 
       if (callback) callback(true, result)
     } catch (exception) {

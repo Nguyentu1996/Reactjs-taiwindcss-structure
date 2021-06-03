@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react'
-import Icons from '../icons'
+import Icons from '../core/icons'
 
 export default function Sidebar(props) {
   return (

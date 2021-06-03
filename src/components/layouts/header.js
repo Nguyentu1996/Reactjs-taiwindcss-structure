@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import InputField from '../core/input-field'
-import Icons from '../icons'
+import Icons from '../core/icons'
 
 function Header() {
   // eslint-disable-next-line no-unused-vars
