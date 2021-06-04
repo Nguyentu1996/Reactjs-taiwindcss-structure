@@ -7,7 +7,6 @@ import Icons from '../core/icons'
 function Header() {
   // eslint-disable-next-line no-unused-vars
   const { t, i18n } = useTranslation()
-
   const onclickInHeader = () => {
   }
 

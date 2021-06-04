@@ -124,4 +124,5 @@ const mapStateToProps = (state) => ({
 const mapStateToDispatch = (dispatch) => ({
   login: (payload, callback) => dispatch(actions.login(payload, callback))
 })
+
 export default connect(mapStateToProps, mapStateToDispatch)(LoginPage)

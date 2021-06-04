@@ -5,7 +5,9 @@ import Header from './header'
 import Menu from './menu'
 import Sidebar from './sidebar'
 import Wrapper from './wrapper'
+import { withToastProvider } from '../core/toast'
 
+const WrapperWithToastProvider = withToastProvider(Wrapper)
 const MainLayout = (props) => {
   const [sidebar, setSidebar] = useState(false)
   const [initState, setInitState] = useState(false)
@@ -26,9 +28,9 @@ const MainLayout = (props) => {
       </>
       <Header />
       <Menu toogleSidebar={handleClick} />
-      <Wrapper>
+      <WrapperWithToastProvider>
         {props.children}
-      </Wrapper>
+      </WrapperWithToastProvider>
       <Footer />
     </div>
   )
